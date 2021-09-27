@@ -50,6 +50,7 @@ workspace.code-workspace
 # Built assets #
 ################
 /storybook-static
+/build
 
 # Translations #
 ################
