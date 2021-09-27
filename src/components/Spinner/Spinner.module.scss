@@ -1,0 +1,39 @@
+.Spinner,
+.Spinner:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+
+.Spinner {
+  font-size: .4rem;
+  position: relative;
+  text-indent: -9999em;
+  border: 1.1em solid rgba(255, 255, 255, .2);
+  border-left: 1.1em solid #ffffff;
+  transform: translateZ(0);
+  animation: load8 1.1s infinite linear;
+}
+
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.withOverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: var(--overlay-color);
+}

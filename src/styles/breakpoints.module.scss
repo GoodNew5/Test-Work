@@ -1,0 +1,80 @@
+$toHands: 767px;
+$hands: 768px;
+$toLap: 1199px;
+$lap: 1200px;
+$toDesk: 1399px;
+$desk: 1400px;
+
+/** NAMING CONVENTION https://twitter.com/lukew/status/273453112902172672 */
+
+:export {
+  TO_HANDS: $toHands;
+  HANDS: $hands;
+  TO_LAP: $toLap;
+  LAP: $lap;
+  TO_DESK: $toDesk;
+  DESK: $desk;
+}
+
+@mixin lap {
+  @media (min-width: $lap) {
+    @content;
+  }
+}
+
+@mixin desk {
+  @media (min-width: $desk) {
+    @content;
+  }
+}
+
+@mixin to-desk {
+  @media (max-width: $toDesk) {
+    @content;
+  }
+}
+
+@mixin to-hands {
+  @media (max-width: $toHands) {
+    @content;
+  }
+}
+
+@mixin hands {
+  @media (min-width: $hands) {
+    @content;
+  }
+}
+
+@mixin hands-landscape {
+  @media (min-width: $hands) and (orientation: landscape) {
+    @content;
+  }
+}
+
+@mixin to-lap {
+  @media (max-width: $toLap) {
+    @content;
+  }
+}
+
+@mixin from-hands-to-lap {
+  @media (min-width: $hands) and (max-width: $toLap) {
+    @content;
+  }
+}
+
+@mixin from-lap-to-desk {
+  @media (min-width: $lap) and (max-width: $toDesk) {
+    @content;
+  }
+}
+
+@mixin from-hands-to-desk {
+  @media (min-width: $hands) and (max-width: $toDesk) {
+    @content;
+  }
+}
+
+$iPhone6-7-8: 375px;
+$iPhone6-7-8-plus: 414px;

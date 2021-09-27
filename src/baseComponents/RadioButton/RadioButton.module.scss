@@ -1,0 +1,153 @@
+$kinds: (
+  'one'
+);
+
+$sizes: (
+  'one'
+);
+
+@each $kind in $kinds {
+  .kind--#{$kind} {
+    .box {
+      background-color: var(--radio-button-#{$kind}-box-background-color);
+      border-color: var(--radio-button-#{$kind}-box-border-color);
+      border-width: var(--radio-button-#{$kind}-box-border-width);
+      border-style: var(--radio-button-#{$kind}-box-border-style);
+      border-radius: var(--radio-button-#{$kind}-box-border-radius);
+    }
+
+    .label {
+      padding-left: var(--radio-button-#{$kind}-label-padding-left);
+      color: var(--radio-button-#{$kind}-label-color);
+      font-size: var(--radio-button-#{$kind}-label-font-size);
+      line-height: var(--radio-button-#{$kind}-label-line-height);
+      align-items: var(--radio-button-#{$kind}-label-vertical-align);
+    }
+
+    @media (pointer: fine) {
+       &:not([disabled]):hover {
+        .box {
+          background-color: var(--radio-button-#{$kind}-hover-box-background-color);
+          border-color: var(--radio-button-#{$kind}-hover-box-border-color);
+        }
+      }
+    }
+
+    &.disabled {
+      .box {
+        background-color: var(--radio-button-#{$kind}-disabled-box-background-color);
+
+        &:before {
+          display: block;
+          content: '';
+          width: var(--radio-button-#{$kind}-disabled-icon-width);
+          height: var(--radio-button-#{$kind}-disabled-icon-height);
+          background-image: var(--radio-button-#{$kind}-disabled-icon);
+        }
+      }
+    }
+
+    &.checked .box {
+      background-color: var(--radio-button-#{$kind}-checked-box-background-color);
+      border-width: var(--radio-button-#{$kind}-checked-box-border-width);
+
+      &:before {
+        display: block;
+        content: '';
+        background-color: var(--radio-button-#{$kind}-checked-checkmark-background-color);
+        width: var(--radio-button-#{$kind}-checkmark-width);
+        height: var(--radio-button-#{$kind}-checkmark-height);
+        background-image: var(--radio-button-#{$kind}-checkmark-background-image);
+        border-radius: 50%;
+        flex-shrink: 0;
+
+        @media (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          // detect ie 11
+          margin-right: 0.65rem;
+        }
+      }
+
+
+    }
+
+    &.checked {
+      input:focus + {
+        .box {
+          background-color: var(--radio-button-#{$kind}-checked-focus-box-background-color);
+          border-color: var(--radio-button-#{$kind}-checked-focus-box-border-color);
+        }
+      }
+
+      @media (pointer: fine) {
+        &:not([disabled]):hover {
+          .box {
+            background-color: var(--radio-button-#{$kind}-checked-hover-box-background-color);
+            border-color: var(--radio-button-#{$kind}-checked-hover-box-border-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+  Common styles
+**/
+
+.radioButton {
+  display: flex;
+  position: relative;
+
+  input {
+    //detect ios
+    @supports (-webkit-overflow-scrolling: touch) {
+      width: 0;
+      height: 0;
+      visibility: hidden;
+    }
+
+    @media (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      // detect ie 11
+      display: none;
+    }
+
+    &:focus {
+      + .box {
+        outline: -webkit-focus-ring-color auto .5rem;
+      }
+    }
+  }
+
+  &:not(.disabled) {
+    cursor: pointer;
+  }
+}
+
+@each $size in $sizes {
+  .size--#{$size} {
+    .box {
+      width: var(--radio-button-size-#{$size}-width);
+      height: var(--radio-button-size-#{$size}-height);
+    }
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  &:before {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: auto;
+  }
+}
+
+.label {
+  display: flex;
+}

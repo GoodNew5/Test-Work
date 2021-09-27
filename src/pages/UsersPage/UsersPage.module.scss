@@ -1,0 +1,28 @@
+@import 'styles/mixins';
+@import 'styles/breakpoints.module';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  @include to-lap {
+    padding: 4rem 1.6rem 2rem 1.6rem;
+  }
+
+  @include from-lap-to-desk {
+    padding: 4rem 4rem 2rem 4rem;
+  }
+
+  @include desk {
+    padding: 4rem 12rem 2rem 12rem;
+  }
+}
+
+.row {
+  margin-top: 2rem;
+
+  @include hands {
+    display: flex;
+  }
+}

@@ -1,0 +1,122 @@
+// /**
+//   NAMESPACE IN KINDS VARIABLES:
+//   1) (name-component)-#{$kind}-(css-propery)
+//   2) (name-component)-#{$kind}-(state)-(css-propery)
+
+//   EXAMPLES:
+//   1) textarea-#{$kind}-border-color
+//   2) textarea-#{$kind}-disabled-border-color
+// **/
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  vertical-align: middle;
+  padding: 0 1rem;
+  font-size: inherit;
+}
+
+$kinds: (
+  'one',
+  'two',
+  'three',
+  'four',
+  'five',
+  'six',
+  'seven',
+  'eight',
+  'nine',
+  'ten'
+);
+
+$sizes: (
+  'one',
+  'two',
+  'three',
+  'four',
+  'five',
+  'six',
+  'seven'
+);
+
+$shapes: (
+  'square',
+  'round'
+);
+
+@each $size in $sizes {
+  .size--#{$size} {
+    min-width: var(--button-#{$size}-width);
+    min-height: var(--button-#{$size}-height);
+  }
+}
+
+@each $shape in $shapes {
+  .shape--#{$shape} {
+    border-radius: var(--button-#{$shape}-border-radius) !important;
+  }
+}
+
+@each $kind in $kinds {
+  .kind--#{$kind} {
+    background-color: var(--button-#{$kind}-background-color);
+    background-image: var(--button-#{$kind}-background-image);
+    color: var(--button-#{$kind}-color);
+    font-weight: var(--button-#{$kind}-font-weight);
+    font-size: var(--button-#{$kind}-font-size);
+    border-color: var(--button-#{$kind}-border-color);
+    border-width: var(--button-#{$kind}-border-width);
+    border-style: var(--button-#{$kind}-border-style);
+    border-radius: var(--button-#{$kind}-border-radius);
+    transition: var(--button-#{$kind}-transition);
+
+    @media (pointer: fine) {
+      &:not([disabled]):hover {
+        background-color: var(--button-#{$kind}-hover-background-color);
+        background-image: var(--button-#{$kind}-hover-background-image);
+        border-color: var(--button-#{$kind}-hover-border-color);
+        color: var(--button-#{$kind}-hover-color);
+      }
+    }
+
+    &.isActive {
+      border-color: var(--button-#{$kind}-active-border-color);
+      background-color: var(--button-#{$kind}-active-background-color);
+      color: var(--button-#{$kind}-active-color);
+
+      @media (pointer: fine) {
+        &:not([disabled]):hover {
+          background-color: var(--button-#{$kind}-active-hover-background-color);
+          color: var(--button-#{$kind}-active-hover-color);
+        }
+      }
+    }
+
+    @media (pointer: coarse) {
+      &:not([disabled]):active {
+        border-color: var(--button-#{$kind}-touch-border-color);
+        background-color: var(--button-#{$kind}-touch-background-color);
+        user-select: var(--button-#{$kind}-touch-user-select);
+        -webkit-tap-highlight-color:  var(--button-#{$kind}-touch-background-color);
+        -webkit-touch-callout: var(--button-#{$kind}-touch-touch-callout);
+        color: var(--button-#{$kind}-touch-color);
+      }
+    }
+
+    &.disabled, &[disabled] {
+      background-color: var(--button-#{$kind}-disabled-background-color);
+      border-color: var(--button-#{$kind}-disabled-border-color);
+      color: var(--button-#{$kind}-disabled-color);
+    }
+  }
+}
+
+.wide {
+  width: 100%;
+}
+
+.stretchUp {
+  height: 100%;
+}

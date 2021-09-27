@@ -1,0 +1,200 @@
+// /**
+//   NAMESPACE IN KINDS VARIABLES:
+//   1) (name-component)-#{$kind}-(css-propery)
+//   2) (name-component)-#{$kind}-(state)-(css-propery)
+
+//   EXAMPLES:
+//   1) textarea-#{$kind}-border-color
+//   2) textarea-#{$kind}-disabled-border-color
+// **/
+
+$kinds: (
+  'one',
+);
+
+$sizes: (
+  'one',
+);
+
+@each $kind in $kinds {
+  .kind--#{$kind} {
+    :global(input) {
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:active,
+      &:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 3rem var(--White) inset !important;
+        background-color: var(--field-#{$kind}-background-color);
+      }
+    }
+
+    &.disabled {
+      &:after {
+        background-color: var(--field-#{$kind}-disabled-background-color);
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        display: block;
+        content: '';
+      }
+
+      .hightlightBlock {
+        border-color: var(--field-#{$kind}-disabled-border-color);
+      }
+
+      .input {
+        opacity: 1; // FOR IOS IF DISABLED
+
+        /**
+          https://stackoverflow.com/questions/262158/disabled-input-text-color
+        **/
+
+        &::placeholder {
+          color: var(--field-#{$kind}-disabled-placeholder-color);
+        }
+      }
+    }
+
+    .input {
+      color: var(--field-#{$kind}-color);
+      font-size: var(--field-#{$kind}-font-size);
+
+      &::placeholder {
+        color: var(--field-#{$kind}-placeholder-color);
+        font-weight: var(--field-#{$kind}-placeholder-font-weight);
+      }
+    }
+
+    .input:focus + .hightlightBlock {
+      border-color: var(--field-#{$kind}-focus-border-color);
+    }
+
+    &.error {
+      .hightlightBlock {
+        border-color: var(--field-#{$kind}-error-border-color) !important;
+      }
+    }
+
+    &.positive {
+      .hightlightBlock {
+        border-color: var(--field-#{$kind}-positive-border-color) !important;
+      }
+    }
+
+    .fieldInner {
+      background-color: var(--field-#{$kind}-background-color);
+      border-radius: var(--field-#{$kind}-border-radius);
+    }
+
+    .hightlightBlock {
+      border-width: var(--field-#{$kind}-border-width);
+      border-color: var(--field-#{$kind}-border-color);
+      border-style: var(--field-#{$kind}-border-style);
+      border-radius: var(--field-#{$kind}-border-radius);
+    }
+  }
+}
+
+.startComponent {
+  margin-right: 1rem;
+}
+
+.endComponent {
+  height: 100%;
+
+  button {
+    padding-right: 1rem;
+  }
+}
+
+.placeholderTextA11y {
+  &:not(:empty) {
+    color: transparent;
+    pointer-events: none;
+    top: -999rem;
+    position: absolute;
+  }
+}
+
+.input {
+  flex: 1;
+  background-color: transparent;
+  outline: none;
+  width: 100%;
+
+  &:placeholder-shown {
+    text-overflow: ellipsis;
+  }
+
+  &::placeholder {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.field {
+  position: relative;
+  display: block;
+  max-width: 100%;
+}
+
+@each $size in $sizes {
+  .size--#{$size} {
+    height: var(--field-#{$size}-height);
+    // width: var(--field-#{$size}-width);
+
+    .input {
+      padding-left: var(--field-#{$size}-padding-left);
+
+      /**
+        for IOS INPUT
+      **/
+
+      height: var(--field-#{$size}-height);
+    }
+  }
+}
+
+.fieldInner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.hightlightBlock {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  &:before {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.message {
+  color: var(--Red);
+
+  &:not(:empty) {
+    padding: 1rem 0;
+  }
+}
+
+.label {
+  margin-bottom: .9rem;
+  color: var(--Manatee);
+  display: block;
+}
+
+.Field {
+  min-width: 0;
+  display: block;
+}

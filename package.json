@@ -1,0 +1,76 @@
+{
+  "name": "test-work",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@react-hook/media-query": "^1.1.1",
+    "axios": "^0.21.4",
+    "classnames": "^2.3.1",
+    "css-vars-ponyfill": "^2.4.7",
+    "date-fns": "^2.24.0",
+    "history": "^5.0.1",
+    "lodash-es": "^4.17.21",
+    "mobx": "^6.3.3",
+    "mobx-react-lite": "^3.2.1",
+    "mobx-state-tree": "^5.0.3",
+    "react": "^17.0.2",
+    "react-app-polyfill": "^2.0.0",
+    "react-dom": "^17.0.2",
+    "react-focus-lock": "^2.5.2",
+    "react-router-dom": "^5.3.0",
+    "react-scripts": "4.0.3",
+    "react-toastify": "^8.0.3",
+    "typescript": "^4.1.2",
+    "use-scroll-lock": "^1.0.0",
+    "vh-check": "^2.0.5",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "GENERATE_SOURCEMAP=true craco start",
+    "build": "GENERATE_SOURCEMAP=false craco build",
+    "test": "react-scripts test",
+    "build:serve": "GENERATE_SOURCEMAP=false craco build && serve -s build",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all",
+      "IE 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "IE 11"
+    ]
+  },
+  "devDependencies": {
+    "@craco/craco": "^6.3.0",
+    "@types/axios": "^0.14.0",
+    "@types/classnames": "^2.3.1",
+    "@types/date-fns": "^2.6.0",
+    "@types/history": "^4.7.9",
+    "@types/jest": "^26.0.15",
+    "@types/lodash-es": "^4.17.5",
+    "@types/node": "^12.0.0",
+    "@types/postcss-preset-env": "^6.7.3",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.3.0",
+    "@types/react-toastify": "^4.1.0",
+    "@types/sass": "^1.16.1",
+    "craco-plugin-svg-sprite": "^1.0.0",
+    "mobx-devtools-mst": "^0.9.30",
+    "postcss-grid-kiss": "^3.0.2",
+    "postcss-preset-env": "^6.7.0",
+    "sass": "^1.42.1"
+  }
+}

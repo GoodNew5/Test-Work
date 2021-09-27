@@ -1,0 +1,123 @@
+@import './breakpoints.module.scss';
+@import 'reset';
+@import 'mixins';
+
+@font-face {
+  font-family: 'PTSans';
+  src: url('../assets//fonts/PTSans-Bold.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PTSans';
+  src: url('../assets/fonts/PTSans-Bold.ttf') format('ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('../assets/fonts/Roboto-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --viewport-height: calc(var(--vh, 1vh) * 100);
+}
+
+html {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  -webkit-text-size-adjust: none;
+  touch-action: manipulation;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+
+  /**
+    https://stackoverflow.com/questions/28988445/css-62-5-why-do-developers-use-it
+  **/
+
+  font-size: 62.5%; /* equivalent font-size 10px on default browser settings */
+}
+
+body {
+  overflow-y: overlay;
+  min-height: var(--viewport-height);
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+  overflow-x: hidden;
+  color: var(--body-color);
+  font-size: var(--body-font-size);
+  background-color: var(--body-background-color);
+  font-family: var(--app-font-family);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+
+  // stylelint-disable
+
+  &[alt] {
+
+    /**
+      hide-alt-text
+      https://stackoverflow.com/questions/36305805/how-to-hide-alt-text-using-css-when-the-image-is-not-present
+    **/
+
+    font-size: 0;
+    text-indent: -999rem;
+    color: transparent;
+  }
+
+  &:after {
+
+    /**
+      hide-image-broken
+      https://stackoverflow.com/questions/22051573/how-to-hide-image-broken-icon-using-only-css-html/62842440#62842440
+    **/
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: var(--image-not-available) no-repeat var(--White) center;
+    content: '';
+    margin: auto;
+    background-size: 6rem;
+  }
+}
+
+:global(.app) {
+  flex-direction: column;
+  display: flex;
+  flex: 1;
+}
+
+:global(.appPreloader) {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--White);
+}
+
+:global(.appLoader) {
+  --color-loader: black !important;
+}

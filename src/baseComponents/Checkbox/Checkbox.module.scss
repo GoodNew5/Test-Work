@@ -1,0 +1,240 @@
+$kinds: (
+  'one',
+  'two',
+  'three',
+);
+
+$sizes: (
+  'one',
+  'two',
+);
+
+$shapes: (
+  'round',
+  'square',
+);
+
+@each $size in $sizes {
+  .size--#{$size} {
+    .box {
+      width: var(--checkbox-#{$size}-width);
+      height: var(--checkbox-#{$size}-height);
+    }
+  }
+}
+
+@each $shape in $shapes {
+  .shape--#{$shape} {
+    .box {
+      border-radius: var(--checkbox-#{$shape}-border-radius);
+    }
+  }
+}
+
+@each $kind in $kinds {
+  .kind--#{$kind} {
+    border-radius: var(--checkbox-#{$kind}-border-radius);
+    padding: var(--checkbox-#{$kind}-padding);
+    background-color: var(--checkbox-#{$kind}-background-color);
+
+    @media (pointer: fine) {
+      &:not([disabled]):hover {
+        background-color: var(--checkbox-#{$kind}-hover-background-color);
+      }
+    }
+
+    .box {
+      background-color: var(--checkbox-#{$kind}-box-background-color);
+      border-color: var(--checkbox-#{$kind}-box-border-color);
+      border-width: var(--checkbox-#{$kind}-box-border-width);
+      border-style: var(--checkbox-#{$kind}-box-border-style);
+      border-radius: var(--checkbox-#{$kind}-box-border-radius);
+    }
+
+    .label {
+      transition: var(--checkbox-#{$kind}-label-transition);
+      font-size: var(--checkbox-#{$kind}-label-font-size);
+      font-weight: var(--checkbox-#{$kind}-label-font-weight);
+      align-items: var(--checkbox-#{$kind}-label-align-items);
+
+      &:not(:empty) {
+        padding-left: var(--checkbox-#{$kind}-label-padding-left);
+      }
+    }
+
+    @media (pointer: fine) {
+      &:not([disabled]):hover {
+        .label {
+          color: var(--checkbox-#{$kind}-label-color);
+        }
+      }
+    }
+
+    @media (pointer: fine) {
+      &:not([disabled]):hover {
+        .label {
+          color: var(--checkbox-#{$kind}-hover-label-color);
+        }
+
+        .box {
+          border-color: var(--checkbox-#{$kind}-hover-box-border-color);
+        }
+      }
+    }
+
+    &:not(.disabled) {
+      &.checked .box {
+        background-color: var(--checkbox-#{$kind}-checked-box-background-color);
+        border-color: var(--checkbox-#{$kind}-checked-box-border-color);
+        border-width: var(--checkbox-#{$kind}-checked-box-border-width);
+
+        &:before {
+          content: '';
+          display: block;
+          width: var(--checkbox-#{$kind}-icon-width);
+          height: var(--checkbox-#{$kind}-icon-height);
+          background-image: var(--checkbox-#{$kind}-icon-background-image);
+          flex-shrink: 0;
+
+          @media (-ms-high-contrast: active), (-ms-high-contrast: none) {
+             // detect ie 11
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 12 10'%3E%3Cpath fill='%23FC3' d='m11.808 1.5482-.3931-.393a.651.651 0 0 0-.464-.1917.6513.6513 0 0 0-.4641.1916L4.9636 6.6782 1.5128 3.2273a.652.652 0 0 0-.4641-.1915.6521.6521 0 0 0-.464.1915l-.3932.393A.6525.6525 0 0 0 0 4.0846c0 .1757.0679.3405.1915.464l3.8962 3.896a.1478.1478 0 0 0 .017.0205l.3931.3866c.1236.1231.2884.1847.4655.1847h.002c.176 0 .3407-.0616.464-.1847l.3933-.39c.0064-.0063.0117-.0115.015-.0167l5.9703-5.9698a.6554.6554 0 0 0 .0001-.927Z'/%3E%3C/svg%3E");
+            margin-right: 0.30rem;
+          }
+        }
+      }
+
+      //stylelint-disable
+
+      /**
+        https://stackoverflow.com/questions/20609485/what-is-the-default-style-of-the-blue-focus-outline-in-chrome
+      **/
+
+      .field:not(.checked):focus + .box + .hightlightBlock {
+        outline: .1rem dotted #212121; // FOR FF
+        outline: -webkit-focus-ring-color auto .5rem;
+      }
+
+      //stylelint-enable
+
+      .field:focus + .box {
+        border-color: var(--checkbox-#{$kind}-focus-box-border-color);
+      }
+
+      &.checked {
+        .label {
+          text-decoration: var(--checkbox-#{$kind}-checked-label-text-decoration);
+        }
+
+        .field:focus + .box {
+          border-color: var(--checkbox-#{$kind}-checked-focus-box-border-color);
+        }
+
+        @media (pointer: fine) {
+          &:not([disabled]):hover {
+            .box {
+              background-color: var(--checkbox-#{$kind}-checked-hover-box-background-color);
+              border-color: var(--checkbox-#{$kind}-checked-hover-box-border-color);
+            }
+          }
+        }
+
+      }
+    }
+
+    &.disabled {
+      user-select: none;
+
+      .box {
+        background-color: var(--checkbox-#{$kind}-disabled-box-background-color);
+        border-color: var(--checkbox-#{$kind}-disabled-box-border-color);
+
+        &:before {
+          content: '';
+          display: block;
+          width: var(--checkbox-#{$kind}-disabled-icon-width);
+          height: var(--checkbox-#{$kind}-disabled-icon-height);
+          background-image: var(--checkbox-#{$kind}-disabled-icon-background-image);
+        }
+      }
+
+      .label {
+        color: var(--checkbox-#{$kind}-disabled-label-color);
+      }
+    }
+  }
+}
+
+/**
+  Common styles
+**/
+
+.yCenter {
+  align-items: center;
+}
+
+.checkbox {
+  position: relative;
+  display: flex;
+
+  input {
+    // detect ios
+    @supports (-webkit-overflow-scrolling: touch) {
+      width: 0;
+      height: 0;
+      visibility: hidden;
+    }
+
+    @media (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      // detect ie 11
+      display: none;
+    }
+  }
+
+  &:not(.disabled) {
+    cursor: pointer;
+  }
+}
+
+.placeholderTextA11y {
+
+  /**
+    https://discourse.wicg.io/t/a-way-to-hide-text-visually-but-not-from-screen-readers/510
+  **/
+
+  color: transparent;
+  pointer-events: none;
+  top: -999rem;
+  position: absolute;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  &:before {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: auto;
+  }
+}
+
+.label {
+  display: flex;
+}
+
+.hightlightBlock {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}

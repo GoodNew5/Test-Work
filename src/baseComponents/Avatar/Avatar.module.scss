@@ -1,0 +1,102 @@
+$kinds: (
+  'one',
+  'two',
+);
+
+$sizes: (
+  'one',
+  'two',
+);
+
+@each $kind in $kinds {
+  .kind--#{$kind} {
+    background-color: var(--avatar-#{$kind}-background-color);
+
+    .defaultAvatar {
+      background-image: var(--avatar-#{$kind}-default-background-image);
+      width: var(--avatar-#{$kind}-default-width);
+      height: var(--avatar-#{$kind}-default-height);
+      margin: auto;
+    }
+
+    &.withOverlayOnHover {
+      &:before {
+        display: block;
+        content: '';
+        transition: var(--avatar-#{$kind}-overlay-transition);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+      }
+
+      &:after {
+        content: '';
+        display: block;
+        background-image: var(--avatar-#{$kind}-overlay-icon-background-image);
+        width: var(--avatar-#{$kind}-overlay-icon-width);
+        height: var(--avatar-#{$kind}-overlay-icon-height);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--avatar-#{$kind}-overlay-icon-transition);
+        z-index: 2;
+      }
+
+       @media (pointer: fine) {
+         &:not([disabled]):hover {
+          &:before {
+            background-color: var(--avatar-#{$kind}-hover-overlay-background-color);
+          }
+
+          &:after {
+            opacity: 1;
+            visibility: visible;
+          }
+         }
+
+      }
+    }
+  }
+}
+
+@each $size in $sizes {
+  .size--#{$size} {
+    padding: var(--avatar-#{$size}-padding);
+    width: var(--avatar-#{$size}-width);
+    height: var(--avatar-#{$size}-width);
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.defaultAvatar {
+  background-size: contain;
+}
+
+.img {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+
+  &:after {
+    display: none;
+    content: '';
+  }
+}

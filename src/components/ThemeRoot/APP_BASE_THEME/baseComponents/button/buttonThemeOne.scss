@@ -1,0 +1,27 @@
+:global(.APP_BASE_THEME) {
+  --button-one-background-color: var(--Indigo);
+  --button-one-color: white;
+  --button-one-font-weight: 400;
+  --button-one-font-size: 1.5rem;
+  --button-one-border-color: transparent;
+  --button-one-border-width: 0;
+  --button-one-border-style: none;
+  --button-one-transition: .3s;
+  --button-one-border-radius: .3rem;
+
+  /* HOVER */
+  --button-one-hover-background-color: var(--IndigoHover);
+  --button-one-hover-color: white;
+
+  /* ACTIVE */
+  --button-one-active-background-color: var(--bright-blue);
+
+  /* DISABLED */
+  --button-one-disabled-color: gray;
+  --button-one-disabled-background-color: var(--Porcelain);
+
+  /* TOUCHED */
+  --button-one-touch-background-color: var(--IndigoTouched);
+  --button-one-touch-border-color: initial;
+  --button-one-touch-color: var(--White);
+}

@@ -1,0 +1,54 @@
+:global(.APP_BASE_THEME) {
+
+  /** INITIAL */
+  --checkbox-one-border-radius: .2rem;
+  --checkbox-two-padding: 0;
+  --checkbox-one-box-background-color: var(--WHITE);
+  --checkbox-one-box-border-color: var(--DESIRED_DAWN);
+  --checkbox-one-box-border-width: .1rem;
+  --checkbox-one-box-border-style: solid;
+  --checkbox-one-box-border-radius: .3rem;
+  --checkbox-one-icon-background-image:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 12 10'%3E%3Cpath fill='%23FC3' d='m11.808 1.5482-.3931-.393a.651.651 0 0 0-.464-.1917.6513.6513 0 0 0-.4641.1916L4.9636 6.6782 1.5128 3.2273a.652.652 0 0 0-.4641-.1915.6521.6521 0 0 0-.464.1915l-.3932.393A.6525.6525 0 0 0 0 4.0846c0 .1757.0679.3405.1915.464l3.8962 3.896a.1478.1478 0 0 0 .017.0205l.3931.3866c.1236.1231.2884.1847.4655.1847h.002c.176 0 .3407-.0616.464-.1847l.3933-.39c.0064-.0063.0117-.0115.015-.0167l5.9703-5.9698a.6554.6554 0 0 0 .0001-.927Z'/%3E%3C/svg%3E");
+  --checkbox-one-icon-width: 1.2rem;
+  --checkbox-one-icon-height: 1.2rem;
+  --checkbox-one-label-padding-left: .9rem;
+  --checkbox-one-label-color: initial;
+  --checkbox-one-label-transition: .3s;
+  --checkbox-one-label-font-size: 1.2rem;
+  --checkbox-one-label-align-items: center;
+  --checkbox-one-label-font-weight: normal;
+
+  /* DISABLED */
+
+  --checkbox-one-disabled-box-border-color: #e1e1e1;
+  --checkbox-one-disabled-box-background-color: #e1e1e1;
+  --checkbox-one-disabled-icon-background-image: initial;
+  --checkbox-one-disabled-icon-width: 1.8rem;
+  --checkbox-one-disabled-icon-height: 1rem;
+  --checkbox-one-disabled-label-color: #a5a5a5;
+
+  /* CHECKED */
+
+  --checkbox-one-checked-box-border-color: var(--SUNGLOW);
+  --checkbox-one-checked-box-background-color: var(--WHITE);
+  --checkbox-one-checked-box-border-width: .2rem;
+
+
+  /* HOVER */
+  --checkbox-one-hover-label-color: initial;
+  --checkbox-one-hover-background-color: initial;
+  --checkbox-one-hover-box-border-color: var(--DESIRED_HOVER);
+
+  /* FOCUS */
+
+  --checkbox-one-focus-box-border-color: var(--DESIRED_HOVER);
+
+  /* CHECKED - HOVER */
+
+  --checkbox-one-checked-hover-box-background-color: initial;
+  --checkbox-one-checked-hover-box-border-color: var(--SUNGLOW_HOVER);
+
+  /* CHECKED - FOCUS */
+
+  --checkbox-one-checked-focus-box-border-color: var(--SUNGLOW_HOVER);
+}

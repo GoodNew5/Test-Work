@@ -1,0 +1,45 @@
+@import 'styles/mixins';
+@import 'styles/breakpoints.module';
+
+.UserCard {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 .4rem 1rem rgba(0, 0, 0, 0.15);
+  background-color: var(--COCONUT_WHITE);
+}
+
+.description {
+  margin-left: 1rem;
+}
+
+.fullName {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: .3rem;
+  display: block;
+}
+
+.label {
+  color: var(--CELLULOID);
+}
+
+.value {
+  margin-left: .3rem;
+  font-weight: 700;
+}
+
+.descrGroup {
+  font-size: 1rem;
+}
+
+.item {
+  margin-bottom: .3rem;
+}
+
+.avatar {
+  @include desk {
+    width: 12rem;
+    height: 12rem;
+  }
+}

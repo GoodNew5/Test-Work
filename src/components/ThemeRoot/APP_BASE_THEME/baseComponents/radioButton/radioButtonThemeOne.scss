@@ -1,0 +1,59 @@
+:global(.APP_BASE_THEME) {
+
+  /**
+  INITIAL
+  **/
+
+  //icon
+  --radio-button-one-checkmark-background-image: initial;
+  --radio-button-one-checkmark-width: .8rem;
+  --radio-button-one-checkmark-color: var(--WHITE);
+  --radio-button-one-checkmark-height: .8rem;
+  //box
+  --radio-button-one-box-background-color: var(--WHITE);
+  --radio-button-one-box-border-radius: 50%;
+  --radio-button-one-box-border-color: var(--DESIRED_DAWN);
+  --radio-button-one-box-border-width: .1rem;
+  --radio-button-one-box-border-style: solid;
+  //label
+  --radio-button-one-label-padding-left: .9rem;
+  --radio-button-one-label-color: initial;
+  --radio-button-one-label-font-size: 1.2rem;
+  --radio-button-one-label-line-height: 1.2;
+  --radio-button-one-label-vertical-align: center;
+
+  /**
+    HOVER
+  **/
+
+  --radio-button-one-hover-box-background-color: var(--WHITE);
+  --radio-button-one-hover-box-border-color: var(--DESIRED_HOVER);
+
+  /**
+    CHECKED
+  **/
+
+  --radio-button-one-checked-box-background-color: var(--DESIRED_DAWN);
+  --radio-button-one-checked-checkmark-background-color: var(--WHITE);
+  --radio-button-one-checked-box-border-width: initial;
+
+  /**
+    DISABLED
+  **/
+
+  --radio-button-one-disabled-box-background-color: gray;
+
+  /**
+      CHECKED-HOVER
+  **/
+
+  --radio-button-one-checked-hover-box-background-color: var(--DESIRED_HOVER);
+  --radio-button-one-checked-hover-box-border-color: var(--DESIRED_HOVER);
+
+  /**
+      CHECKED-FOCUS
+  **/
+
+  --radio-button-one-checked-focus-box-background-color: var(--DESIRED_HOVER);
+  --radio-button-one-checked-focus-box-border-color: var(--DESIRED_HOVER);
+}

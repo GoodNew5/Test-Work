@@ -1,0 +1,24 @@
+@import 'styles/mixins';
+@import 'styles/breakpoints.module';
+
+.UserList {
+  margin-top: 1rem;
+  display: grid;
+
+  @include to-hands {
+    grid-row-gap: 1.2rem;
+  }
+
+  @include from-hands-to-lap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include hands {
+    grid-gap: 2rem;
+  }
+
+  @include lap {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+  }
+}

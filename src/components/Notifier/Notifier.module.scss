@@ -1,0 +1,29 @@
+@import 'styles/mixins';
+
+.Notifier {
+  font-size: 1.5rem;
+
+  :global {
+    --toastify-font-family: inherit;
+
+    .Toastify__toast--success {
+      background-color: var(--Indigo);
+    }
+
+    .Toastify__toast-body {
+      min-width: 0;
+    }
+
+    .Toastify__toast--error {
+      --toastify-text-color-light: var(--White);
+      --toastify-color-light: var(--Vermilion);
+      --toastify-icon-color-error: var(--White);
+    }
+
+    .Toastify__toast--success {
+      --toastify-text-color-light: var(--MineShaft);
+      --toastify-color-light: var(--Aloha);
+      --toastify-icon-color-success: var(--White);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+:global(.APP_BASE_THEME) {
+  --textarea-one-border-radius: .3rem;
+  --textarea-one-border-style: solid;
+  --textarea-one-resize: none;
+  --textarea-one-border-width: .1rem;
+  --textarea-one-background-color: var(--BlackHaze);
+  --textarea-one-color: black;
+  --textarea-one-font-size: 1.6rem;
+  --textarea-one-placeholder-color: var(--Manatee);
+
+  /* STATES */
+
+  // INITIAL
+  --textarea-one-border-color: var(--WayWardWind);
+
+  // ERROR
+  --textarea-one-error-border-color: var(--Red);
+
+  // POSITIVE
+  --textarea-one-positive-border-color: var(--Indigo);
+
+  // DISABLED
+  --textarea-one-disabled-background-color: rgb(255 255 255 / 62%);
+  --textarea-one-disabled-border-color: gray;
+
+  // FOCUS
+  --textarea-one-focus-border-color: var(--DustyGray);
+}

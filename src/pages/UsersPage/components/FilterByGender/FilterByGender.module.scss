@@ -1,0 +1,19 @@
+@import 'styles/mixins';
+@import 'styles/breakpoints.module';
+
+.title {
+  font-weight: 700;
+  margin-bottom: .8rem;
+}
+
+.label {
+  font-family: var(--roboto-font);
+}
+
+.FilterByGender {
+  padding-right: 5rem;
+}
+
+.radioButton {
+  margin-bottom: 1rem;
+}

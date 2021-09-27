@@ -1,0 +1,12 @@
+:global(.APP_BASE_THEME) {
+  --avatar-one-background-color: var(--Alabaster);
+  --avatar-one-default-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 46 46'%3E%3Cpath fill='%23A3A7AB' d='M37.6441 34.417c-6.7853-2.4902-8.9544-1.7172-8.9544-6.2179 0-2.7009 2.2233-4.4514 2.9811-6.7662.7579-2.3148 1.1963-5.0555 1.5607-7.0491.3645-1.9936.5093-2.7647.7075-4.8889C34.1813 6.844 32.4196 0 23 0c-9.4168 0-11.1841 6.8439-10.9363 9.495.1982 2.1241.3438 2.8953.7074 4.8888.3637 1.9936.7978 4.7341 1.5552 7.0491.7574 2.315 2.9838 4.0653 2.9838 6.7662 0 4.5007-2.1691 3.7277-8.9544 6.2179C1.5457 36.9127 0 42.2488 0 43.9875V45c0 .5523.4477 1 1 1h44c.5523 0 1-.4477 1-1v-1.0125c0-1.7359-1.5485-7.072-8.3559-9.5705z'/%3E%3C/svg%3E");
+  --avatar-one-default-width: 52%;
+  --avatar-one-default-height: 52%;
+  --avatar-one-hover-overlay-background-color: var(--overlay-color);
+  --avatar-one-overlay-transition: .3s;
+  --avatar-one-overlay-icon-width: 52%;
+  --avatar-one-overlay-icon-transition: .3s;
+  --avatar-one-overlay-icon-height: 52%;
+  --avatar-one-overlay-icon-background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 32 32'%3E%3Cpath fill='%23EBEAE9' d='M16 12c-2.168 0-4 1.832-4 4s1.832 4 4 4 4-1.832 4-4-1.832-4-4-4z'/%3E%3Cpath fill='%23EBEAE9' d='M26.6602 6.6696h-3.448l-3.6094-3.6093a1.3274 1.3274 0 00-.9426-.3907h-5.3334c-.3546 0-.6933.14-.9426.3907L8.7748 6.6696h-3.448c-1.4706 0-2.6666 1.196-2.6666 2.6667V24.003c0 1.4706 1.196 2.6666 2.6666 2.6666h21.3334c1.4706 0 2.6666-1.196 2.6666-2.6666V9.3363c0-1.4707-1.196-2.6667-2.6666-2.6667zm-10.6667 16c-3.6133 0-6.6667-3.0533-6.6667-6.6666 0-3.6134 3.0534-6.6667 6.6667-6.6667 3.6133 0 6.6667 3.0533 6.6667 6.6667 0 3.6133-3.0534 6.6666-6.6667 6.6666z'/%3E%3C/svg%3E");
+}

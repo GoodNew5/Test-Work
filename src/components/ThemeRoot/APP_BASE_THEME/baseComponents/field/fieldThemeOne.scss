@@ -1,0 +1,29 @@
+:global(.APP_BASE_THEME) {
+  --field-one-border-radius: .3rem;
+  --field-one-border-style: solid;
+  --field-one-border-width: .1rem;
+  --field-one-background-color: var(--BlackHaze);
+
+  --field-one-color: black;
+  --field-one-font-size: 1.6rem;
+  --field-one-placeholder-color: var(--TANGLED_WEB);
+  --field-one-box-shadow: inset 0 .1rem .1rem 0 rgba(0, 0, 0, .3);
+
+  /* STATES */
+
+   /* INITIAL */
+  --field-one-border-color: var(--SPRITZIG);
+
+  /* ERROR */
+  --field-one-error-border-color: var(--Red);
+
+  /* POSITIVE */
+  --field-one-positive-border-color: var(--Indigo);
+
+  /*  DISABLED */
+  --field-one-disabled-background-color: rgb(255 255 255 / 62%);
+  --field-one-disabled-border-color: gray;
+
+  /* FOCUS */
+  --field-one-focus-border-color: var(--SPRITZIG_FOCUS);
+}

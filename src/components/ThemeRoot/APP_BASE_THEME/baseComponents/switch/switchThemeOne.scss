@@ -1,0 +1,17 @@
+:global(.APP_BASE_THEME) {
+  --switch-one-width: 4.6rem;
+  --switch-one-height: 2.6rem;
+  --switch-one-slider-transition: .3s;
+  --switch-one-circle-transition: .3s;
+  --switch-one-circle-width: 2.2rem;
+  --switch-one-circle-height: 2.2rem;
+  --switch-one-circle-border-radius: 50%;
+  --switch-one-circle-background-color: white;
+  --switch-one-circle-checked-background-color: white;
+  --switch-one-slider-checked-background-color: var(--MineShaft);
+  --switch-one-slider-background-color: #c4c4c4;
+  --switch-one-slider-border-radius: 2.7rem;
+  --switch-one-slider-border-width: .2rem;
+  --switch-one-slider-border-style: solid;
+  --switch-one-slider-border-color: transparent;
+}

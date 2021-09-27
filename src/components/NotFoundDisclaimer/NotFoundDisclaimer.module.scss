@@ -1,0 +1,32 @@
+@import 'styles/breakpoints.module.scss';
+
+.disclaimer {
+  font-size: 3rem;
+  flex-grow: 1;
+
+  @include to-lap {
+    padding-bottom: 2.7rem;
+    padding-top: 2.7rem;
+  }
+
+  @include hands {
+    min-height: 100%;
+  }
+
+  @include lap {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+  }
+}
+
+.icon {
+  margin-bottom: 1.4rem;
+  width: 5rem;
+  height: 5rem;
+}
+
+.title {
+  margin-bottom: 1.1rem;
+  font-weight: 600;
+  font-size: 2.4rem;
+}
